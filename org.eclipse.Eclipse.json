@@ -1,5 +1,6 @@
 {
 	"app-id": "org.eclipse.Eclipse",
+	"branch": "lombok",
 	"runtime": "org.gnome.Sdk",
 	"runtime-version": "3.28",
 	"sdk": "org.gnome.Sdk",
@@ -66,6 +67,13 @@
 				{
 					"type": "file",
 					"path": "org.eclipse.Eclipse.appdata.xml"
+				},
+				{
+					"type": "file",
+					"url": "https://projectlombok.org/downloads/lombok-1.16.20.jar",
+					"sha512": "c5760ac4dfb76ae8615716d8981509cd7861d1974577814285c6334cc1177036e74f07dbb0f3cd385914e3032d3bc16c7afda63746987a2b480fbc115efc9b9f",
+					"dest": "eclipse",
+					"dest-filename": "lombok.jar"
 				}
 			]
 		}

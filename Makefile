@@ -11,5 +11,6 @@ install:
 	cp org.eclipse.Eclipse.desktop /app/share/applications
 	mkdir -p /app/share/icons/hicolor/48x48/apps
 	cp org.eclipse.Eclipse.png /app/share/icons/hicolor/48x48/apps
+	echo "-javaagent:/app/eclipse/lombok.jar" >> /app/eclipse/eclipse.ini
 
 .PHONY: install
