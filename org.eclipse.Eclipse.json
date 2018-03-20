@@ -4,6 +4,9 @@
 	"runtime-version": "3.26",
 	"branch": "4.6",
 	"sdk": "org.gnome.Sdk",
+	"sdk-extensions": [
+			"org.freedesktop.Sdk.Extension.openjdk9"
+	],
 	"command": "eclipse",
 	"finish-args": [
 		"--socket=x11",
@@ -11,8 +14,8 @@
 		"--share=network",
 		"--device=all",
 		"--filesystem=~/workspace;~/.m2;~/.eclipse;/etc/hosts:ro;",
-		"--env=JAVA_HOME=/app/lib/jvm/java-8-openjdk-amd64",
-		"--env=PATH=/app/bin:/usr/bin:/app/lib/jvm/java-8-openjdk-amd64/bin"
+		"--env=PATH=/app/bin:/usr/bin:/app/jre/bin",
+		"--env=JAVA_HOME=/app/jre/"
 	],
 	"cleanup": [
 		"/COPYRIGHT",
@@ -31,54 +34,16 @@
 	],
 	"modules": [
 		{
+			"name": "openjdk",
+			"buildsystem": "simple",
+			"build-commands": [
+					"/usr/lib/sdk/openjdk9/install.sh"
+			]
+		},
+		{
 			"name": "eclipse",
 			"no-autogen": true,
 			"sources": [
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jdk-headless_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "3cf1c9d9a21a561192529a07f50faea0df3f05fcbf5df60205d04c77bba48278",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jdk_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "3ad435dd0c6a84c95068d6ec971f9b0da00e88e9f6da5af45e39120b10865e61",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jre-headless_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "c007b7ded94c75795e9e262de3ab30d392add2e9d3fb59e5f882c47f7d891550",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jre-jamvm_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "1472aced6df87d15bf7866fedec5ec775c15b462e93708b7f7a2b616de5b55ac",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jre-zero_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "e4ebff53c4a097d21320b0ff38a7040a25fd1b27322772f8ed5ec83e06b46812",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "file",
-					"url": "http://obs-master.endlessm-sf.com:82/shared/eos/pool/core/o/openjdk-8/openjdk-8-jre_8u102-b14.1-1~bpo8+1endless1bem1_amd64.deb",
-					"sha256": "36a679811c20594e4c914642ec27436bb94412bdd94c856154a831e07cd589b3",
-					"dest": "jdk8-debs"
-				},
-				{
-					"type": "shell",
-					"commands": [
-						"echo '== Unpacking and copying Debian packages =='",
-						"mkdir openjdk",
-						"for deb in jdk8-debs/*.deb ; do ar p ${deb} data.tar.xz | unxz | tar x -C openjdk; done",
-						"mv openjdk/usr/* /app/"
-					]
-				},
 				{
 					"type": "archive",
 					"url": "http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/1a/eclipse-java-neon-1a-linux-gtk-x86_64.tar.gz",
