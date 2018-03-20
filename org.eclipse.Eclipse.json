@@ -10,7 +10,6 @@
 	"finish-args": [
 		"--socket=x11",
 		"--share=network",
-		"--device=all",
 		"--filesystem=~/workspace;~/.m2;~/.eclipse;/etc/hosts:ro;",
 		"--env=PATH=/app/bin:/usr/bin:/app/jre/bin",
 		"--env=JAVA_HOME=/app/jre/"
