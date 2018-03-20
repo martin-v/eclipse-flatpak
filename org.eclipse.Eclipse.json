@@ -9,7 +9,6 @@
 	"command": "eclipse",
 	"finish-args": [
 		"--socket=x11",
-		"--share=ipc",
 		"--share=network",
 		"--device=all",
 		"--filesystem=~/workspace;~/.m2;~/.eclipse;/etc/hosts:ro;",
