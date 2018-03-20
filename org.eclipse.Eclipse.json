@@ -45,8 +45,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release/neon/1a/eclipse-java-neon-1a-linux-gtk-x86_64.tar.gz",
-					"sha256": "cd22d953dee2db30d86c51a50189dd062c8ac68c5776cbe525a7f852986f23b5",
+					"url": "http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/oxygen/2/eclipse-jee-oxygen-2-linux-gtk-x86_64.tar.gz",
+					"sha512": "f4cb8610200faca1658a78599cd695522ccbc16de3be1e6feda8e211fbd6e42437a581634c67c5dba2ef14ddbaf069af30418881f2eb012d883ff61bb64cd91e",
 					"dest": "eclipse"
 				},
 				{
