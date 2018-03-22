@@ -10,7 +10,10 @@
 	"finish-args": [
 		"--socket=x11",
 		"--share=network",
-		"--filesystem=~/workspace;~/.m2;~/.eclipse;/etc/hosts:ro;",
+		"--filesystem=home",
+		"--filesystem=~/.m2:create",
+		"--filesystem=~/.eclipse:create",
+		"--filesystem=/etc/hosts:ro",
 		"--env=PATH=/app/bin:/usr/bin:/app/jre/bin",
 		"--env=JAVA_HOME=/app/jre/"
 	],
