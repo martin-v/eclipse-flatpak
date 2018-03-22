@@ -43,8 +43,8 @@
 			"sources": [
 				{
 					"type": "archive",
-					"url": "http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/oxygen/2/eclipse-jee-oxygen-2-linux-gtk-x86_64.tar.gz",
-					"sha512": "f4cb8610200faca1658a78599cd695522ccbc16de3be1e6feda8e211fbd6e42437a581634c67c5dba2ef14ddbaf069af30418881f2eb012d883ff61bb64cd91e",
+					"url": "http://ftp-stud.fht-esslingen.de/pub/Mirrors/eclipse/technology/epp/downloads/release/oxygen/3/eclipse-java-oxygen-3-linux-gtk-x86_64.tar.gz",
+					"sha512": "c8238731def1d61cbf69fd2f5602af61fc5b3e9f6e9bdaa8057c01ecd2b071c3717ec69195e1f03f52f1dc8b3eff3172daf3192d519e8d104e0d6d411b7478c2",
 					"dest": "eclipse"
 				},
 				{
